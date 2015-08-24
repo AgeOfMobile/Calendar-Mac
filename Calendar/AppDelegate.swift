@@ -39,6 +39,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         icon.onMouseDown = {
             if (icon.isSelected) {
+                let calendarView : CalendarView =
+                    self.popover?.contentViewController?.view as! CalendarView;
+                calendarView.updateViews()
                 self.popover?.showRelativeToRect(rect, ofView: icon, preferredEdge: edge)
                 if (self.popoverTransiencyMonitor == nil) {
                     self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask((.LeftMouseDownMask | .RightMouseDownMask | .KeyUpMask),

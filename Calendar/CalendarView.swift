@@ -194,5 +194,5 @@ class CalendarView : NSView {
             cell.update()
             currentDate = currentDate.dateByAddingDays(1)
         }
-    }
+    }    
 }
